@@ -1,91 +1,453 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projecto de Technology</title>
-    <style>
-        /* Estilos globales */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header, footer {
-            background-color: rgb(124, 23, 158);
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        nav {
-            background-color: #414;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 0 10px;
-        }
-        nav a:hover {
-            background-color: #415;
-        }
-   
-        /* Estilos de la barra lateral */
-        aside {
-            flex: 0 0 300px;
-            background-color: #light purple
-            ;
-            padding: 20px;
-            float: right;
-        }
-        aside h2 {
-            color: #333;
-            border-bottom: 2px solid #333;
-            padding-bottom: 5px;
-        }
-        aside p {
-            color: #555;
-        }
-    </style>
+<style>
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  body{
+    background:#eef6ff;
+    color:#1d1d1d;
+  }
+
+  nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:#2563eb;
+    padding:18px;
+    z-index:1000;
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.2);
+  }
+
+  nav a{
+    text-decoration:none;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    transition:0.3s;
+  }
+
+  nav a:hover{
+    opacity:0.7;
+  }
+
+  section{
+    min-height:100vh;
+    padding:120px 8%;
+  }
+
+  .hero{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(to bottom,#2563eb,#eef6ff);
+  }
+
+  .hero h1{
+    font-size:70px;
+    margin-bottom:20px;
+    color:white;
+    letter-spacing:3px;
+  }
+
+  .hero p{
+    font-size:24px;
+    max-width:800px;
+    line-height:1.6;
+    color:white;
+  }
+
+  .section-title{
+    font-size:50px;
+    margin-bottom:50px;
+    color:#2563eb;
+  }
+
+  .card{
+    background:white;
+    padding:40px;
+    border-radius:25px;
+    margin-bottom:40px;
+    box-shadow:0 10px 30px rgba(37,99,235,0.1);
+  }
+
+  .card h2{
+    font-size:35px;
+    margin-bottom:20px;
+    color:#2563eb;
+  }
+
+  .card p{
+    line-height:1.8;
+    font-size:20px;
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+  }
+
+  .mini-card{
+    background:white;
+    border-radius:25px;
+    padding:30px;
+    box-shadow:0 8px 20px rgba(37,99,235,0.1);
+    transition:0.3s;
+  }
+
+  .mini-card:hover{
+    transform:translateY(-5px);
+  }
+
+  .mini-card h3{
+    color:#2563eb;
+    margin-bottom:15px;
+    font-size:28px;
+  }
+
+  .mini-card p{
+    line-height:1.7;
+    font-size:18px;
+  }
+
+  .highlight{
+    color:#2563eb;
+    font-weight:bold;
+  }
+
+  footer{
+    background:#2563eb;
+    color:white;
+    text-align:center;
+    padding:30px;
+    font-size:18px;
+  }
+
+  @media(max-width:768px){
+
+    .hero h1{
+      font-size:45px;
+    }
+
+    .hero p{
+      font-size:18px;
+    }
+
+    .section-title{
+      font-size:38px;
+    }
+
+    nav{
+      gap:15px;
+      flex-wrap:wrap;
+    }
+
+    nav a{
+      font-size:15px;
+    }
+
+  }
+  
+  .topic-image{
+  width:100%;
+  max-width:500px;
+  border-radius:20px;
+  margin-top:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+</style>
 </head>
+
 <body>
 
-    <header>
-        <h1>Technology Project</h1>
-        <h6>Team 2 </h6>
-    </header>
-    <nav>
-		<a href="Klara and the sun.png">Gaby</a>
-        <a href="Final Project 2001 A Space Odyssey Poster.png">Rebeca</a>
-        <a href="Blue and Orange Modern AI Chat Rules Poster (1).png">Sergio</a>
-        <a href="Tomorrow Is The Waiting (1)_page-0001.jpg">Miranda</a>
-        <a href="Life 3.0 Being human in the Age of Artificial Intelligence(1).png">Alejandro</a>
-    </nav>
-        
-     
-	
-            <h2>What did we do for English?</h2>
-            <p>We made posters of books we read</p>
-            
-            <h2>What did we do for Technology?</h2>
-            <p>We programmed a web page with all of our posters.</p>
-  
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#process">Process</a>
+    <a href="#bones">What’s and Why’s</a>
+    <a href="#relations">The Relations</a>
+  </nav>
 
-   <nav>
-    <a href="https://acrobat.adobe.com/id/urn:aaid:sc:va6c2:bbcf45d1-e48e-471d-9df6-ea306ebf7497">Klara and the sun</a>
-    <a href="https://ia902702.us.archive.org/0/items/SpaceOdyssey_819/2001_A_Space_Odyssey_-_Arthur_C_Clarke.pdf">2001:A space odyssey</a>
-     <a href="https://www.cag.edu.tr/uploads/site/lecturer-files/max-tegmark-life-30-being-human-in-the-age-of-artificial-intelligence-alfred-a-knopf-2017-aTvn.pdf">Life 3.0</a>
-    <a href="https://www.cag.edu.tr/uploads/site/lecturer-files/max-tegmark-life-30-being-human-in-the-age-of-artificial-intelligence-alfred-a-knopf-2017-aTvn.pdf">Artificial Intelligence Basics</a>
-    <a href="https://docs.google.com/document/d/1HCqZJFOhNWcepchxcE4hPE3SIM8tlRsdCdbsT8p4YvY/edit?usp=sharing">Tomorrow Waiting</a>
-   
-    </nav>
-    <footer>
-        <p>&copy;Team 2</p>
-        
-    </footer>
-    
-	
+  <!-- HOME -->
+
+  <section class="hero" id="home">
+    <div>
+      <h1>STEM</h1>
+
+      <p>
+        We made a presentation where we joined our research,
+        discoveries, and work from every project.
+        Things like Diabetes, the Skeletal System, Volume,
+        Proportions, HTML Coding, and 3D Modeling.
+        <br><br>
+        We programmed a web page that talks about every topic
+        we researched about.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+
+  <section id="process">
+
+    <h1 class="section-title">Process</h1>
+
+    <div class="card">
+
+      <p>
+        This study analyzes diabetes data to evaluate how body volume predicts obesity
+        and its progression to type 2 diabetes.
+        By using 3D volumetrics, we bypassed the limitations of standard Body Mass Index (BMI)
+        to accurately measure visceral fat, which is directly linked to insulin resistance.
+      </p>
+
+      <br>
+
+      <p>
+        The research focuses on three main pillars:
+      </p>
+
+      <br>
+
+      <p>
+        <span class="highlight">Volumetric Indicators:</span>
+        Regional volume calculations help identify central obesity,
+        serving as a precise predictor for diabetes risk.
+      </p>
+
+      <br>
+
+      <p>
+        <span class="highlight">Anatomical Proportions:</span>
+        Analyzing body ratios maps android fat distribution,
+        which correlates directly with metabolic syndrome.
+      </p>
+
+      <br>
+
+      <p>
+        <span class="highlight">Bone Mass Percentage:</span>
+        Calculating the exact percentage of bone mass isolates skeletal weight.
+        This reveals normal-weight obesity, identifying individuals with high fat percentages
+        but healthy BMIs who still face severe diabetes risks.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- BONES -->
+
+  <section id="bones">
+
+    <h1 class="section-title">What’s and Why’s</h1>
+
+    <div class="grid">
+
+      <div class="mini-card">
+        <h3>What are bones?</h3>
+
+        <p>
+          Bones are living, growing organs that make up the skeletal system.
+        </p>
+              <img src="bone.jpg" class="topic-image">
+      </div>
+
+      <div class="mini-card">
+        <h3>What are they made of?</h3>
+<img src="bone2.png" class="topic-image">
+        <p>
+          Bones are living organs made primarily of a tough, flexible protein
+          called collagen and a hard mineral called calcium phosphate.
+        </p>
+      </div>
+      <div class="mini-card">
+        <h3>Functions of bones</h3>
+
+        <p>
+          Their primary functions include providing physical support,
+          protecting vital organs, and facilitating movement.
+        </p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Why are bones important?</h3>
+<img src="bone3.jpg" class="topic-image">
+
+        <p>
+          The skeleton provides a strong framework to support and protect
+          soft organs such as the brain, heart, and lungs.
+        </p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Why are bones made of collagen?</h3>
+<img src="bone4.jpg" class="topic-image">
+        <p>
+          Collagen provides flexibility and resilience,
+          helping bones absorb impact and prevent shattering.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- DIABETES -->
+
+  <section>
+
+    <h1 class="section-title">Diabetes</h1>
+
+    <div class="grid">
+
+      <div class="mini-card">
+        <h3>What is diabetes?</h3>
+
+        <p>
+          Diabetes Mellitus (DM) is a chronic condition where the body
+          cannot properly regulate blood glucose levels.
+          <img src="diabetes.jpg" class="topic-image">
+
+        </p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Symptoms</h3>
+
+        <p>
+          Frequent urination, increased thirst and hunger,
+          and losing weight without trying.
+        </p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Risk factors</h3>
+<img src="diabetes2.jpg" class="topic-image">
+        <p>
+          Diabetes risk factors include age,
+          family health history, and lifestyle.
+        </p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Why treatment matters</h3>
+<img src="diabetes3.jpg" class="topic-image">
+        <p>
+          Getting treated keeps blood sugar at safe levels
+          and prevents long-term damage to organs and nerves.
+        </p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Healthy lifestyle</h3>
+
+        <p>
+          Maintaining a healthy lifestyle helps control blood sugar levels
+          and prevents serious health complications.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- VOLUME -->
+
+  <section>
+
+    <h1 class="section-title">Volume</h1>
+
+    <div class="grid">
+
+      <div class="mini-card">
+        <h3>What is volume?</h3>
+
+        <p>
+          Volume refers to the amount of three-dimensional
+          space occupied by an object.
+        </p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Volume Formula</h3>
+<img src="volume.jpg" class="topic-image">
+        <p>
+          For a rectangular box:
+          <br><br>
+          <strong>V = l × w × h</strong>
+        </p>
+
+      </div>
+
+      <div class="mini-card">
+        <h3>Why is volume important?</h3>
+<img src="volume2.png" class="topic-image">
+        <p>
+          Knowing the formula helps calculate capacity,
+          manage spaces, and measure materials accurately.
+        </p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Why different formulas?</h3>
+
+        <p>
+          Different geometric shapes enclose space differently,
+          requiring unique mathematical formulas.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- RELATIONS -->
+
+  <section id="relations">
+
+    <h1 class="section-title">The Relations</h1>
+
+    <div class="card">
+
+      <p>
+        We used the process of volume to discover if a team member has a risk of diabetes.
+      </p>
+
+      <br>
+
+      <p>
+        We made a 3D model to see a visual of our measurements.
+      </p>
+
+      <br>
+
+      <p>
+        We used proportions to make a simple drawing of our measurements.
+      </p>
+
+      <br>
+
+      <p>
+        We made a table that compares the guess of the height of our bones
+        proportionally to our body using percentages.
+      </p>
+
+    </div>
+
+  </section>
+
+  <footer>
+    STEM Project • Bones, Diabetes, Volume & Technology
+  </footer>
+
 </body>
 </html>
